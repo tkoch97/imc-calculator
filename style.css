@@ -29,6 +29,7 @@
   --fs-result: 1.6rem;
   --fs-labels: 1.4rem;
   --fs-inputsAndButtonAndErrorMsg: 1.6rem;
+  --fs-footer: 1.2rem;
 }
 
 body {
@@ -40,6 +41,7 @@ body {
   display: grid;
   height: 100vh;
   place-content: center;
+  gap: 10.0rem;
   padding: 1.5rem;
 }
 
@@ -143,7 +145,7 @@ form button:hover {
   left: 0;
   display: grid;
   place-content: center;
-
+  
   opacity: 0;
   visibility: hidden;
 }
@@ -153,6 +155,8 @@ form button:hover {
   font-size: var(--fs-result);
   position: relative;
   
+  animation: appear 1s ease-in-out backwards;
+
 }
 
 .result .close {
@@ -171,6 +175,11 @@ form button:hover {
 
 /* Alert Error */
 
+.alertError.open {
+  opacity: 1;
+  visibility: visible;
+}
+
 .alertError {
   position: absolute;
   top: 0;
@@ -185,15 +194,28 @@ form button:hover {
   line-height: 2.0rem;
   text-align: center;
 
-  animation: topdown 1s ease-in-out;
+  animation: topdown 2s ease-in-out;
 
   opacity: 0;
   visibility: hidden;
 }
 
-.alertError.open {
-  opacity: 1;
-  visibility: visible;
+footer {
+  color: #5eaa8d;
+  font-family: var(--ff-general);
+  font-size: var(--fs-footer);
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+}
+
+footer a {
+  text-decoration: none;
+  color: #5eaa8d;
+}
+
+footer a:hover {
+  color: #02799D;
 }
 
 /* Media Querys */
@@ -208,6 +230,21 @@ form button:hover {
   }
 }
 
+@media (max-width: 385px) {
+  .input-wrapper input::placeholder {
+    font-size: 1.2rem;
+  }
+
+  .card {
+    padding: 4.0rem 4.5rem 4.5rem;
+  }
+  .card #title {
+    font-size: 2.5rem;
+  }
+
+
+}
+
 /* Animations */
 
 @keyframes topdown {
@@ -219,5 +256,28 @@ form button:hover {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes downtop {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes appear {
+  
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }

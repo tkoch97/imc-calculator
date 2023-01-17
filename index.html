@@ -9,7 +9,7 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <script src="./script.js" defer></script>
+  <script src="./js/script.js" defer type="module"></script>
 
   <title>IMC calculator</title>
 </head>
@@ -26,12 +26,12 @@
 
         <div class="input-wrapper">
           <label for="weight">Peso (kg)</label>
-          <input type="text" id="weight" placeholder="85" />
+          <input type="text" id="weight" placeholder="Digite seu peso aqui" />
         </div>
 
         <div class="input-wrapper">
           <label for="height">Estatura (cm)</label>
-          <input type="text" id="height" placeholder="170" />
+          <input type="text" id="height" placeholder="Digite sua estatura aqui." />
         </div>
 
         <button>
@@ -40,8 +40,11 @@
         </button>
       </form>
     </main>
+    <footer>
+      <p>Creat by<a href="https://www.linkedin.com/in/tkoch97/" target="_blank"> @tkoch97 </a>at Rocketseat Explorer Trail</p>
+    </footer>
   </div>
-
+  
   <div class="modal-wrapper">
     <div class="modal card">
       <h2 class="result">
@@ -52,7 +55,5 @@
       </h2>
     </div>
   </div>
-
-
 </body>
 </html>

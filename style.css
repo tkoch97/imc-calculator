@@ -152,6 +152,7 @@ form button:hover {
   text-align: center;
   font-size: var(--fs-result);
   position: relative;
+  
 }
 
 .result .close {
